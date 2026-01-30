@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as si
 
-# --- 1. Der "wahre" Preis zum Vergleich (Black-Scholes Formel) ---
+# --- 1. Der wahre Preis zum Vergleich (Black-Scholes Formel) ---
 def black_scholes_call(S0, K, T, r, sigma):
     d1 = (np.log(S0 / K) + (r + 0.5 * sigma ** 2) * T) / (sigma * np.sqrt(T))
     d2 = d1 - sigma * np.sqrt(T)
