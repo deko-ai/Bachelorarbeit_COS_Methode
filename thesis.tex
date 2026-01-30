@@ -1,16 +1,56 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx} % Wichtig für Bilder
+\usepackage{amsmath}  % Wichtig für komplexe mathematische Formeln
+\usepackage{amssymb}  % Für zusätzliche mathematische Symbole
 
-\title{Bachelorarbeit: Fourier-Cosinus Methode}
-\author{Dein Name}
+\title{Optionsbewertung mit Hilfe der Fourier-Cosinus Methode}
+\author{Denis Kocaman}
+\date{30. Januar 2026}
 
 \begin{document}
 \maketitle
 
 \section{Einleitung}
-In dieser Arbeit implementiere ich die COS-Methode basierend auf dem Standardwerk von \cite{hirsa2013}. Dies ist notwendig, da die charakteristische Funktion der Schlüssel zur Preisberechnung ist.
+In dieser Arbeit implementiere ich die COS-Methode basierend auf dem Standardwerk von \cite{hirsaComputationalMethodsFinance2013}. Dies ist notwendig, da die charakteristische Funktion der Schlüssel zur Preisberechnung ist.
 
-% Das Literaturverzeichnis wird hier generiert:
+\section{Theoretischer Hintergrund}
+Die charakteristische Funktion bildet die Basis für die Fourier-Inversion. Im Black-Scholes Modell ist sie definiert als der Erwartungswert des Log-Asset-Preises:
+
+\begin{equation}
+    \phi(u) = \exp\left( iu \left( \ln(S_0) + (r - \frac{1}{2}\sigma^2)T \right) - \frac{1}{2}\sigma^2 u^2 T \right)
+\end{equation}
+
+In Abbildung \ref{fig:cf_plot} sehen wir den Realteil dieser Funktion für das Black-Scholes Modell.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/plot_cf.pdf} 
+    \caption{Visualisierung des Realteils der charakteristischen Funktion.}
+    \label{fig:cf_plot}
+\end{figure}
+
+\section{Mathematische Implementierung der COS-Methode}
+Der Kerngedanke der Methode ist die Approximation des Optionspreises durch eine Fourier-Cosinus-Reihe. Der Preis $V$ ergibt sich aus der Summe:
+
+\begin{equation}
+    V \approx e^{-rT} \sum_{k=0}^{N-1}{'} F_k \cdot V_k
+\end{equation}
+
+Dabei sind $F_k$ die Koeffizienten der charakteristischen Funktion und $V_k$ die Payoff-Koeffizienten. Letztere werden für eine Call-Option analytisch durch die Funktionen $\chi_k$ und $\psi_k$ bestimmt:
+
+\begin{align}
+    \chi_k(c, d) &:= \frac{1}{1 + \omega_k^2} \left[ \cos(\omega_k(d-a))e^d - \cos(\omega_k(c-a))e^c + \omega_k \sin(\omega_k(d-a))e^d - \omega_k \sin(\omega_k(c-a))e^c \right] \\
+    \psi_k(c, d) &:= 
+    \begin{cases} 
+        d - c & \text{für } k = 0 \\
+        \frac{1}{\omega_k} \left[ \sin(\omega_k(d-a)) - \sin(\omega_k(c-a)) \right] & \text{für } k > 0
+    \end{cases}
+\end{align}
+
+Hierbei entspricht $\omega_k := \frac{k\pi}{b-a}$ der Frequenz der Cosinus-Wellen auf dem Integrationsintervall $[a, b]$.
+
+% Das Literaturverzeichnis
 \bibliographystyle{plain}
 \bibliography{literatur}
 
