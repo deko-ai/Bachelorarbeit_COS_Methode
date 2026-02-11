@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.30)  11 FEB 2026 17:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.30)  11 FEB 2026 18:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -66,18 +66,13 @@ Package babel Info: Configuration files are deprecated, as
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-(C:\Users\Deko\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/de\babel-
-german.tex)
+(C:\Users\Deko\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/invalid\b
+abel-ngerman.tex)
+Package babel Info: Importing font and identification data for ngerman
+(babel)             from babel-de.ini. Reported on input line 4321.
 
-Package babel Warning: The name 'german' with the 'ldf' mechanism is
-(babel)                currently assigned to the old 1901 variant of German.
-(babel)                For modern post-1996 German, use the name 'ngerman'.
-(babel)                Reported on input line 4321.
-
-Package babel Info: Importing font and identification data for german
-(babel)             from babel-de-1901.ini. Reported on input line 4321.
-(C:\Users\Deko\AppData\Local\Programs\MiKTeX\tex/latex/babel-german\german.ldf
-Language: german 
+(C:\Users\Deko\AppData\Local\Programs\MiKTeX\tex/latex/babel-german\ngerman.ldf
+Language: ngerman 
 
 (C:\Users\Deko\AppData\Local\Programs\MiKTeX\tex/latex/babel-german\babel-germa
 n.def
@@ -370,7 +365,7 @@ ex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count315
 ) (disposition.aux
-Package babel Info: 'german' activates 'german' shorthands.
+Package babel Info: 'ngerman' activates 'german' shorthands.
 (babel)             Reported on input line 8.
 )
 \openout1 = `disposition.aux'.
@@ -473,41 +468,36 @@ Op-tio-nen im Black-Scholes-
 \tf@toc=\write4
 \openout4 = `disposition.toc'.
 
- [2] [3]
-Overfull \hbox (4.96492pt too wide) in paragraph at lines 88--89
+ [2]
+Overfull \hbox (4.96492pt too wide) in paragraph at lines 73--74
 []\T1/cmr/m/n/12 Klassische An-sät-ze wie Monte-Carlo-Simulationen oder Finite-
 Differenzen-Methoden
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 104
-.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 89.
+
 (C:\Users\Deko\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 104
-.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 89.
+
 
 (C:\Users\Deko\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.107 \end{itemize}
-                    [1] [2] [3] (disposition.bbl) [4] (disposition.aux)
+[3] [4] [5] (disposition.bbl) [6] (disposition.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-29>
  ***********
 Package rerunfilecheck Info: File `disposition.out' has not changed.
-(rerunfilecheck)             Checksum: 911AC2701D33BC314A8B2D2CC88D76E3;1629.
+(rerunfilecheck)             Checksum: 312A339302A8528E48C62294A6DE5AF5;1477.
  ) 
 Here is how much of TeX's memory you used:
- 13353 strings out of 467871
- 212735 string characters out of 5418860
- 635359 words of memory out of 5000000
- 42042 multiletter control sequences out of 15000+600000
+ 13352 strings out of 467871
+ 212772 string characters out of 5418860
+ 635353 words of memory out of 5000000
+ 42041 multiletter control sequences out of 15000+600000
  639103 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,5n,79p,614b,533s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -522,9 +512,9 @@ jfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\Deko\AppData\Local\MiKTeX\fonts
 /pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk><C:/Users/Deko/AppData/Local/Programs
 /MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Deko/AppData/Local/
 Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on disposition.pdf (8 pages, 164736 bytes).
+Output written on disposition.pdf (7 pages, 163360 bytes).
 PDF statistics:
- 475 PDF objects out of 1000 (max. 8388607)
- 30 named destinations out of 1000 (max. 500000)
- 65 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 467 PDF objects out of 1000 (max. 8388607)
+ 29 named destinations out of 1000 (max. 500000)
+ 57 words of extra memory for PDF output out of 10000 (max. 10000000)
 
