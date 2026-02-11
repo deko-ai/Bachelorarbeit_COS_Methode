@@ -1,0 +1,65 @@
+\begin{thebibliography}{7}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Carr and Madan(1999)]{carrOptionValuationUsing1999}
+Peter Carr and Dilip Madan.
+\newblock Option valuation using the fast {{Fourier}} transform.
+\newblock \emph{The Journal of Computational Finance}, 2\penalty0 (4):\penalty0
+  61--73, 1999.
+\newblock ISSN 14601559.
+\newblock \doi{10.21314/JCF.1999.043}.
+
+\bibitem[Fang and Oosterlee(2009{\natexlab{a}})]{fangNovelPricingMethod2009}
+F.~Fang and C.~W. Oosterlee.
+\newblock A {{Novel Pricing Method}} for {{European Options Based}} on
+  {{Fourier-Cosine Series Expansions}}.
+\newblock \emph{SIAM Journal on Scientific Computing}, 31\penalty0
+  (2):\penalty0 826--848, January 2009{\natexlab{a}}.
+\newblock ISSN 1064-8275, 1095-7197.
+\newblock \doi{10.1137/080718061}.
+
+\bibitem[Fang and
+  Oosterlee(2009{\natexlab{b}})]{fangPricingEarlyexerciseDiscrete2009}
+F.~Fang and C.~W. Oosterlee.
+\newblock Pricing early-exercise and discrete barrier options by fourier-cosine
+  series expansions.
+\newblock \emph{Numerische Mathematik}, 114\penalty0 (1):\penalty0 27--62,
+  November 2009{\natexlab{b}}.
+\newblock ISSN 0029-599X, 0945-3245.
+\newblock \doi{10.1007/s00211-009-0252-4}.
+
+\bibitem[Hirsa(2013)]{hirsaComputationalMethodsFinance2013a}
+Ali Hirsa.
+\newblock \emph{Computational Methods in Finance}.
+\newblock Chapman \& {{Hall}}/{{CRC}} Financial Mathematics Series. CRC Press,
+  Taylor \& Francis Group, Boca Raton, Fla., 2013.
+\newblock ISBN 978-1-4398-2957-8.
+
+\bibitem[Hull(2022)]{hullOptionsFuturesOther2022}
+John Hull.
+\newblock \emph{Options, Futures, and Other Derivatives}.
+\newblock Pearson4060 1 Online-Ressource (880 Seiten), Harlow, England,
+  eleventh edition, global edition edition, 2022.
+\newblock ISBN 978-1-292-41065-4 978-1-292-41062-3.
+
+\bibitem[Oosterlee and
+  Grzelak(2020)]{oosterleeMathematicalModelingComputation2020}
+Cornelis~Willebrordus Oosterlee and Lech~A. Grzelak.
+\newblock \emph{Mathematical Modeling and Computation in Finance: With
+  Exercises and {{Python}} and {{Matlab}} Computer Codes}.
+\newblock World Scientific, New Jersey London Singapore Beijing Shanghai Hong
+  Kong Taipei Chennai Tokyo, 2020.
+\newblock ISBN 978-1-78634-794-7 978-1-78634-805-0.
+
+\bibitem[Seydel(2009)]{seydelToolsComputationalFinance2009}
+R{\"u}diger Seydel.
+\newblock \emph{Tools for {{Computational Finance}}}.
+\newblock Universitext. Springer Berlin Heidelberg, Berlin, Heidelberg, 2009.
+\newblock ISBN 978-3-540-92928-4 978-3-540-92929-1.
+\newblock \doi{10.1007/978-3-540-92929-1}.
+
+\end{thebibliography}
