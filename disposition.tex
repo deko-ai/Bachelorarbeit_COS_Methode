@@ -1,0 +1,149 @@
+\documentclass[12pt,a4paper]{article}
+
+% --- Pakete ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage{natbib}
+
+% Seitenränder gemäß ZHAW-Standard
+\geometry{a4paper, left=30mm, right=25mm, top=25mm, bottom=25mm}
+\onehalfspacing 
+
+\begin{document}
+
+% --- 1. TITELBLATT ---
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    
+    {\large Zürcher Hochschule für Angewandte Wissenschaften} \\
+    {\large School of Management and Law} \\
+    {\large Abteilung Banking, Finance, Insurance} \\[1.5cm]
+    
+    {\large Bachelor of Science in Betriebsökonomie} \\[0.3cm]
+    {\Large \textbf{Disposition zur Bachelorarbeit}} \\[1.5cm]
+    
+    {\LARGE \textbf{Bewertung von Optionen mit der Fourier-Cosinus Methode}} \\[1.5cm]
+    
+    \begin{flushleft}
+        \textbf{vorgelegt von:} \\
+        Denis Kocaman \\
+        {Falkenstrasse 1a} \\
+        {9552, Bronschhofen} \\
+        {22578462} \\[1cm]
+        
+        \textbf{eingereicht bei:} \\
+        Dr. Norbert Hilber \\
+        Fachstelle für Financial Data Science und Ökonometrie \\
+        Gertrudstrasse 8 \\
+        8400 Winterthur \\[1cm]
+        
+        \textbf{Ort, Datum:} \\
+        Winterthur, \today
+    \end{flushleft}
+\end{titlepage}
+
+\setcounter{page}{1}
+\pagenumbering{roman}
+
+% --- I. MANAGEMENT SUMMARY ---
+\section*{I. Management Summary}
+Die meisten Optionspreisprobleme sind nicht analytisch lösbar und man muss auf approximative Methoden zurückgreifen, wie beispielsweise Monte-Carlo-Simulationen oder Finite-Differenzen-Verfahren. Diese sind jedoch je nach Kontrakttyp rechenintensiv und daher für Aufgaben wie Modellkalibrierung oder die Berechnung von Sensitivitäten (Greeks) weniger geeignet. Kennt man die charakteristische Funktion des der Option zugrunde liegenden Basiswerts, kann man mit Hilfe sogenannter Transformationsmethoden den Preis effizient bestimmen.
+
+Die vorliegende Bachelorarbeit beschreibt und vergleicht zwei solche Transformationsmethoden: die schnelle Fourier-Transformation (FFT) nach \citet{carrOptionValuationUsing1999} und die Fourier-Cosinus (COS) Methode nach \citet{fangNovelPricingMethod2009}. Die COS-Methode wird in Python implementiert und auf europäische Optionen im Black-Scholes-Modell sowie in einem alternativen Modell angewendet. Die Implementierung wird anschliessend auf Korrektheit und Konvergenz geprüft, indem die Ergebnisse mit bereitgestellten Referenzalgorithmen verglichen werden.
+
+\newpage
+
+% --- INHALTSVERZEICHNIS ---
+\tableofcontents
+\newpage
+
+% --- II. ABKÜRZUNGSVERZEICHNIS ---
+\section*{II. Abkürzungsverzeichnis}
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+\begin{tabbing}
+    \hspace{3cm} \= \kill
+    BS \> Black-Scholes-Modell \\
+    CF \> Charakteristische Funktion (Characteristic Function) \\
+    COS \> Fourier-Cosinus-Methode \\
+    FFT \> Fast Fourier Transform \\
+    RMSE \> Root Mean Square Error \\
+    SML \> School of Management and Law \\
+\end{tabbing}
+\newpage
+
+\pagenumbering{arabic}
+
+% --- 1. AUSGANGSLAGE UND PROBLEMSTELLUNG ---
+\section{Ausgangslage und Problemstellung}
+Die Bewertung derivativer Finanzinstrumente erfordert in der Praxis leistungsfähige numerische Verfahren. Während das klassische Modell von Black und Scholes \citep{hullOptionsFuturesOther2022} für europäische Standardoptionen eine geschlossene Lösung bietet, erfordern realitätsnähere Modelle -- etwa mit stochastischer Volatilität oder Sprungprozessen -- oft numerische Näherungsverfahren.
+
+Klassische Ansätze wie Monte-Carlo-Simulationen oder Finite-Differenzen-Methoden sind zwar flexibel, aber rechenintensiv. Transformationsmethoden bieten hier eine attraktive Alternative: Kennt man die charakteristische Funktion des zugrunde liegenden Preisprozesses, kann der Optionspreis über eine Fourier-Inversion bestimmt werden. \citet{carrOptionValuationUsing1999} zeigten dies erstmals mit der FFT-Methode. \citet{fangNovelPricingMethod2009} entwickelten mit der COS-Methode einen Ansatz, der eine deutlich höhere Konvergenzgeschwindigkeit verspricht.
+
+Dennoch bleibt in der Praxis die Frage offen, wie sich beide Methoden hinsichtlich Genauigkeit, Rechenzeit und numerischer Stabilität konkret unterscheiden und unter welchen Bedingungen die COS-Methode ihre theoretischen Vorteile tatsächlich ausspielen kann.
+
+% --- 2. ZIELSETZUNG UND FORSCHUNGSFRAGEN ---
+\section{Zielsetzung und Forschungsfragen}
+Ziel dieser Arbeit ist es, die Fourier-Cosinus (COS) Methode zur Optionsbewertung in Python zu implementieren, ihre Genauigkeit und Effizienz systematisch zu untersuchen und mit der FFT-Methode zu vergleichen. Dabei wird die COS-Methode sowohl im Black-Scholes-Modell als auch in einem alternativen Modell (z.\,B.\ einem Sprungmodell) angewendet.
+
+Die zentrale Forschungsfrage lautet:
+\begin{quote}
+    \textit{``Wie schneidet die COS-Methode im Vergleich zur FFT-Methode hinsichtlich Konvergenzgeschwindigkeit, Genauigkeit und Rechenzeit bei der Bewertung europäischer Optionen ab?''}
+\end{quote}
+
+Zur Konkretisierung werden folgende Unterfragen untersucht:
+\begin{itemize}
+    \item Wie lässt sich die COS-Methode mathematisch herleiten und welche Rolle spielt die charakteristische Funktion dabei?
+    \item Ab welcher Anzahl an Summanden $N$ erreicht die COS-Methode eine hinreichende Genauigkeit im Vergleich zur analytischen Black-Scholes-Lösung?
+    \item Wie verhält sich die COS-Methode im Vergleich zur FFT-Methode bei unterschiedlichen Modellen und Parameterkonfigurationen?
+    \item Welchen Einfluss hat die Wahl des Abschneideintervalls $L$ auf die numerische Stabilität der Ergebnisse?
+\end{itemize}
+
+% --- 3. THEORETISCHER RAHMEN ---
+\section{Theoretischer und konzeptioneller Rahmen}
+Der theoretische Rahmen basiert auf dem Konzept der risikoneutralen Bewertung, bei dem der Optionspreis als diskontierter Erwartungswert des Payoffs unter dem risikoneutralen Mass dargestellt wird. Da die Dichtefunktion des Log-Preises in vielen Modellen keine geschlossene Form besitzt, die charakteristische Funktion $\phi(u)$ hingegen bekannt ist, bieten Transformationsmethoden einen eleganten Weg zur Preisberechnung.
+
+Die COS-Methode, wie von \citet{fangNovelPricingMethod2009} eingeführt, approximiert die Dichtefunktion durch eine Fourier-Cosinus-Reihenentwicklung auf einem endlichen Intervall $[a, b]$. Die Koeffizienten der Reihe werden direkt aus der charakteristischen Funktion $\phi(u)$ abgeleitet. Im Vergleich dazu wertet die FFT-Methode nach \citet{carrOptionValuationUsing1999} das Fourier-Integral numerisch aus, wobei ein Dämpfungsfaktor eingeführt werden muss.
+
+Ergänzend wird auf das Werk von \citet{oosterleeMathematicalModelingComputation2020} zurückgegriffen, das eine umfassende Darstellung numerischer Methoden in der Finanzwirtschaft mit Python-Implementierungen bereitstellt.
+
+% --- 4. STAND DER FORSCHUNG ---
+\section{Stand der Forschung}
+Die wissenschaftliche Grundlage der Transformationsmethoden in der Optionsbewertung wurde durch \citet{carrOptionValuationUsing1999} mit der Einführung der FFT-Methode gelegt. Dieser Ansatz ermöglichte erstmals die effiziente Berechnung von Optionspreisen für eine breite Klasse von Modellen, bei denen die charakteristische Funktion bekannt ist.
+
+\citet{fangNovelPricingMethod2009} zeigten, dass die COS-Methode für glatte Dichtefunktionen eine exponentielle Konvergenzrate besitzt und damit die FFT-Methode in vielen Fällen an Effizienz übertrifft. In einer weiterführenden Arbeit erweiterten \citet{fangPricingEarlyexerciseDiscrete2009} die Methode auf Optionen mit vorzeitiger Ausübung und diskreten Barrieren.
+
+\citet{hirsaComputationalMethodsFinance2013a} widmet in seinem Standardwerk zur computergestützten Finanzmathematik ein Kapitel der Implementierung von Fourier-Methoden und behandelt dabei sowohl die FFT als auch die COS-Methode. \citet{seydelToolsComputationalFinance2009} bietet eine fundierte Einführung in numerische Werkzeuge der Computational Finance, die als methodische Grundlage herangezogen wird.
+
+% --- 5. METHODISCHES VORGEHEN ---
+\section{Methodisches Vorgehen}
+Die Arbeit ist als quantitative Simulationsstudie konzipiert und gliedert sich in folgende Schritte:
+\begin{enumerate}
+    \item \textbf{Theoretische Grundlegung:} Darstellung der risikoneutralen Bewertung, der charakteristischen Funktionen sowie mathematische Herleitung der FFT- und der COS-Methode auf Basis der Originalliteratur von \citet{fangNovelPricingMethod2009} und \citet{carrOptionValuationUsing1999}.
+    \item \textbf{Implementierung in Python:} Entwicklung eines Programms zur Preisberechnung europäischer Optionen mittels der COS-Methode. Die Implementierung erfolgt unter Verwendung von Standard-Bibliotheken (\texttt{NumPy}, \texttt{SciPy}, \texttt{Matplotlib}).
+    \item \textbf{Numerische Experimente:} Systematische Konvergenzanalyse (Variation von $N = 4, 8, 16, 32, \ldots$), Sensitivitätsanalyse bezüglich des Parameters $L$ sowie Vergleich der Rechenzeiten zwischen COS- und FFT-Methode.
+    \item \textbf{Modellvergleich:} Anwendung der COS-Methode auf ein alternatives Modell (z.\,B.\ Merton Jump-Diffusion) und Überprüfung der Korrektheit anhand bereitgestellter Referenzalgorithmen.
+\end{enumerate}
+
+% --- 6. ERWARTETER ERKENNTNISGEWINN ---
+\section{Erwarteter Erkenntnisgewinn}
+Die Arbeit soll einen Beitrag zur praktischen Einordnung der COS-Methode im Vergleich zur etablierten FFT-Methode leisten. Es wird erwartet, dass die Simulationen die theoretisch postulierte überlegene Konvergenzgeschwindigkeit der COS-Methode bestätigen. Darüber hinaus sollen konkrete Empfehlungen für die Wahl der numerischen Parameter ($N$, $L$) in Abhängigkeit vom verwendeten Modell und der Marktsituation (Moneyness, Volatilität, Laufzeit) abgeleitet werden.
+
+% --- 7. DEKLARATION KI ---
+\section{Deklaration zur Verwendung von Künstlicher Intelligenz}
+Im Rahmen dieser Bachelorarbeit wurden generative KI-Tools (insbesondere Gemini von Google) unterstützend eingesetzt. Die Verwendung erfolgte gemäß den Richtlinien der ZHAW zur sprachlichen Optimierung, Strukturfindung und zur kognitiven Anregung beim Brainstorming. Die inhaltliche und mathematische Verantwortung liegt vollumfänglich beim Autor.
+
+\newpage
+
+% --- 8. LITERATURVERZEICHNIS ---
+\bibliographystyle{plainnat}
+\bibliography{literatur}
+
+\end{document}
