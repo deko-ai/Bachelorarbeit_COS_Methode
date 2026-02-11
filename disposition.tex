@@ -9,7 +9,7 @@
 \usepackage{geometry}
 \usepackage{setspace}
 \usepackage{caption}
-\usepackage{hyperref}
+\usepackage[plainpages=false,pdfpagelabels]{hyperref}
 \usepackage{natbib}
 
 % Seitenränder gemäß ZHAW-Standard
@@ -17,6 +17,8 @@
 \onehalfspacing 
 
 \begin{document}
+
+\pagenumbering{Alph}
 
 % --- 1. TITELBLATT ---
 \begin{titlepage}
@@ -50,7 +52,6 @@
     \end{flushleft}
 \end{titlepage}
 
-\setcounter{page}{1}
 \pagenumbering{roman}
 
 % --- I. MANAGEMENT SUMMARY ---
@@ -65,6 +66,8 @@ Die vorliegende Bachelorarbeit beschreibt und vergleicht zwei solche Transformat
 \tableofcontents
 \newpage
 
+\pagenumbering{arabic}
+\setcounter{page}{1}
 
 % --- 1. AUSGANGSLAGE UND PROBLEMSTELLUNG ---
 \section{Ausgangslage und Problemstellung}

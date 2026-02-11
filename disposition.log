@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.30)  11 FEB 2026 18:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.30)  11 FEB 2026 18:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -295,6 +295,8 @@ File: puenc.def 2025-07-12 v7.01o Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
+Package hyperref Info: Option `plainpages' set `false' on input line 4066.
+Package hyperref Info: Option `pdfpagelabels' set `true' on input line 4066.
 Package hyperref Info: Hyper figures OFF on input line 4195.
 Package hyperref Info: Link nesting OFF on input line 4200.
 Package hyperref Info: Hyper index ON on input line 4203.
@@ -459,7 +461,7 @@ Package hyperref Info: Link coloring OFF on input line 19.
  [1
 
 {C:/Users/Deko/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Overfull \hbox (0.60081pt too wide) in paragraph at lines 60--61
+Overfull \hbox (0.60081pt too wide) in paragraph at lines 61--62
 \T1/cmr/m/n/12 Methode wird in Py-thon im-ple-men-tiert und auf eu-ro-päi-sche 
 Op-tio-nen im Black-Scholes-
  []
@@ -469,23 +471,23 @@ Op-tio-nen im Black-Scholes-
 \openout4 = `disposition.toc'.
 
  [2]
-Overfull \hbox (4.96492pt too wide) in paragraph at lines 73--74
+Overfull \hbox (4.96492pt too wide) in paragraph at lines 76--77
 []\T1/cmr/m/n/12 Klassische An-sät-ze wie Monte-Carlo-Simulationen oder Finite-
 Differenzen-Methoden
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 89.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 92.
 
 (C:\Users\Deko\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 89.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 92.
 
 
 (C:\Users\Deko\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-[3] [4] [5] (disposition.bbl) [6] (disposition.aux)
+[1] [2] [3] (disposition.bbl) [4] (disposition.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-29>
@@ -495,8 +497,8 @@ Package rerunfilecheck Info: File `disposition.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  13352 strings out of 467871
- 212772 string characters out of 5418860
- 635353 words of memory out of 5000000
+ 212768 string characters out of 5418860
+ 635419 words of memory out of 5000000
  42041 multiletter control sequences out of 15000+600000
  639103 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -512,7 +514,7 @@ jfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\Deko\AppData\Local\MiKTeX\fonts
 /pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk><C:/Users/Deko/AppData/Local/Programs
 /MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Deko/AppData/Local/
 Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on disposition.pdf (7 pages, 163360 bytes).
+Output written on disposition.pdf (7 pages, 163355 bytes).
 PDF statistics:
  467 PDF objects out of 1000 (max. 8388607)
  29 named destinations out of 1000 (max. 500000)
