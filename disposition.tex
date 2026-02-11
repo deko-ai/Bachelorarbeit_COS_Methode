@@ -83,7 +83,7 @@ Die vorliegende Bachelorarbeit beschreibt und vergleicht zwei solche Transformat
 
 % --- 1. AUSGANGSLAGE UND PROBLEMSTELLUNG ---
 \section{Ausgangslage und Problemstellung}
-Die Bewertung derivativer Finanzinstrumente erfordert in der Praxis leistungsfähige numerische Verfahren. Während das klassische Modell von Black und Scholes \citep{hullOptionsFuturesOther2022} für europäische Standardoptionen eine geschlossene Lösung bietet, erfordern realitätsnähere Modelle -- etwa mit stochastischer Volatilität oder Sprungprozessen -- oft numerische Näherungsverfahren.
+Die Bewertung derivativer Finanzinstrumente erfordert in der Praxis leistungsfähige numerische Verfahren. Während das klassische Modell von Black und Scholes \citep{hullOptionsFuturesOther2022} für europäische Standardoptionen eine geschlossene Lösung bietet, erfordern realitätsnähere Modelle, etwa mit stochastischer Volatilität oder Sprungprozessen, oft numerische Näherungsverfahren.
 
 Klassische Ansätze wie Monte-Carlo-Simulationen oder Finite-Differenzen-Methoden sind zwar flexibel, aber rechenintensiv. Transformationsmethoden bieten hier eine attraktive Alternative: Kennt man die charakteristische Funktion des zugrunde liegenden Preisprozesses, kann der Optionspreis über eine Fourier-Inversion bestimmt werden. \citet{carrOptionValuationUsing1999} zeigten dies erstmals mit der FFT-Methode. \citet{fangNovelPricingMethod2009} entwickelten mit der COS-Methode einen Ansatz, der eine deutlich höhere Konvergenzgeschwindigkeit verspricht.
 
