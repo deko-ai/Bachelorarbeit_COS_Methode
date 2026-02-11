@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.30)  30 JAN 2026 17:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.30)  11 FEB 2026 16:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -195,6 +195,10 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
 (C:\Users\Deko\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+
+LaTeX Warning: Citation `hirsaComputationalMethodsFinance2013' on page 1 undefi
+ned on input line 15.
+
 <figures/plot_cf.pdf, id=1, 578.16pt x 289.08pt>
 File: figures/plot_cf.pdf Graphic file (type pdf)
 <use figures/plot_cf.pdf>
@@ -215,37 +219,45 @@ Overfull \hbox (90.6855pt too wide) detected at line 49
 
 
 (c:\Users\Deko\Desktop\Semester 8\Bachelorarbeit\Tech\Bachelorarbeit_COS_Method
-e\build\thesis.bbl) [2]
+e\build\thesis.bbl
+
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+) [2]
 (c:\Users\Deko\Desktop\Semester 8\Bachelorarbeit\Tech\Bachelorarbeit_COS_Method
 e\build\thesis.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-29>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 2604 strings out of 467871
- 39092 string characters out of 5418860
+ 2603 strings out of 467871
+ 39054 string characters out of 5418860
  440733 words of memory out of 5000000
- 31475 multiletter control sequences out of 15000+600000
- 635315 words of font info for 70 fonts, out of 8000000 for 9000
+ 31474 multiletter control sequences out of 15000+600000
+ 635277 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,17n,65p,358b,236s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Deko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mbx12.pfb><C:/Users/Deko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
-nts/cm/cmex10.pfb><C:/Users/Deko/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb><C:/Users/Deko/AppData/Local/Programs/MiKTeX/fonts/ty
-pe1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Deko/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Deko/AppData/Local/Programs/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Deko/AppData/Local/Pro
-grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Deko/AppData/Lo
-cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Deko/App
-Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/De
-ko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
-Users/Deko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.p
-fb><C:/Users/Deko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmti10.pfb>
-Output written on thesis.pdf (2 pages, 155617 bytes).
+mbx10.pfb><C:/Users/Deko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmbx12.pfb><C:/Users/Deko/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb><C:/Users/Deko/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Deko/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Deko/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/Deko/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Deko/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Deko/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/
+Deko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/
+Users/Deko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb><C:/Users/Deko/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmsy7.pfb>
+Output written on thesis.pdf (2 pages, 151516 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
