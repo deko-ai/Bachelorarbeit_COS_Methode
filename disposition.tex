@@ -58,8 +58,7 @@
 \section*{I. Management Summary}
 Die meisten Optionspreisprobleme sind nicht analytisch lösbar und man muss auf approximative Methoden zurückgreifen, wie beispielsweise Monte-Carlo-Simulationen oder Finite-Differenzen-Verfahren. Diese sind jedoch je nach Kontrakttyp rechenintensiv und daher für Aufgaben wie Modellkalibrierung oder die Berechnung von Sensitivitäten (Greeks) weniger geeignet. Kennt man die charakteristische Funktion des der Option zugrunde liegenden Basiswerts, kann man mit Hilfe sogenannter Transformationsmethoden den Preis effizient bestimmen.
 
-Die vorliegende Bachelorarbeit beschreibt und vergleicht zwei solche Transformationsmethoden: die schnelle Fourier-Transformation (FFT) nach \citet{carrOptionValuationUsing1999} und die Fourier-Cosinus (COS) Methode nach \citet{fangNovelPricingMethod2009}. Die COS-Methode wird in Python implementiert und auf europäische Optionen im Black-Scholes-Modell sowie in einem alternativen Modell angewendet. Die Implementierung wird anschliessend auf Korrektheit und Konvergenz geprüft, indem die Ergebnisse mit bereitgestellten Referenzalgorithmen verglichen werden.
-
+Die vorliegende Bachelorarbeit beschreibt und vergleicht zwei solche Transformationsmethoden: die schnelle Fourier-Transformation (FFT) nach \citet{carrOptionValuationUsing1999} und die Fourier-Cosinus (COS) Methode nach \citet{fangNovelPricingMethod2009}. Letztere wird in Python implementiert und zur Bewertung von sowohl pfad-unabhängigen (europäischen) als auch pfadabhängigen (z.\,B.\ Barrier-) Optionen eingesetzt. Als Modelle dienen das Black-Scholes-Modell sowie das Heston-Modell (stochastische Volatilität). Während für einfache Modelle bereits effiziente analytische Formeln existieren, soll aufgezeigt werden, dass die COS-Methode insbesondere bei rechenintensiven Modellen mit stochastischer Volatilität, für die oft nur semi-analytische Preisformeln vorliegen, einen signifikanten Effizienzvorteil bietet. Die Implementierung wird anschliessend auf Korrektheit und Konvergenz geprüft, indem die Ergebnisse mit bereitgestellten Referenzalgorithmen verglichen werden.
 \newpage
 
 % --- INHALTSVERZEICHNIS ---
@@ -92,7 +91,8 @@ Zur Konkretisierung werden folgende Unterfragen untersucht:
     \item Ab welcher Anzahl an Summanden $N$ erreicht die COS-Methode eine hinreichende Genauigkeit im Vergleich zur analytischen Black-Scholes-Lösung?
     \item Wie verhält sich die COS-Methode im Vergleich zur FFT-Methode bei unterschiedlichen Modellen und Parameterkonfigurationen?
     \item Welchen Einfluss hat die Wahl des Abschneideintervalls $L$ auf die numerische Stabilität der Ergebnisse?
-    \item Bietet die COS-Methode bei Modellen mit stochastischer Volatilität einen signifikanten Performance-Vorteil gegenüber der Auswertung herkömmlicher semi-analytischer Preisformeln?
+    \item Wie lässt sich die COS-Methode mathematisch auf pfadabhängige Optionen erweitern und welche Anpassungen sind für die numerische Stabilität notwendig?
+    \item Bietet die COS-Methode bei Modellen mit stochastischer Volatilität einen messbaren Performance-Vorteil gegenüber der numerischen Integration herkömmlicher semi-analytischer Preisformeln?
 \end{itemize}
 
 % --- 3. THEORETISCHER RAHMEN ---
@@ -116,9 +116,9 @@ Die wissenschaftliche Grundlage der Transformationsmethoden in der Optionsbewert
 Die Arbeit ist als quantitative Simulationsstudie konzipiert und gliedert sich in folgende Schritte:
 \begin{enumerate}
     \item \textbf{Theoretische Grundlegung:} Darstellung der risikoneutralen Bewertung, der charakteristischen Funktionen sowie mathematische Herleitung der FFT- und der COS-Methode auf Basis der Originalliteratur von \citet{fangNovelPricingMethod2009} und \citet{carrOptionValuationUsing1999}.
-    \item \textbf{Implementierung in Python:} Entwicklung eines Programms zur Preisberechnung europäischer Optionen mittels der COS-Methode. Die Implementierung erfolgt unter Verwendung von Standard-Bibliotheken (\texttt{NumPy}, \texttt{SciPy}, \texttt{Matplotlib}).
+    \item \textbf{Implementierung in Python:} Entwicklung eines Programms zur Preisberechnung einer \textbf{pfad-unabhängigen (europäischen)} sowie einer \textbf{pfadabhängigen (z.\,B.\ Barrier-Option)} mittels der COS-Methode. Die Implementierung erfolgt unter Verwendung von Standard-Bibliotheken (\texttt{NumPy}, \texttt{SciPy}, \texttt{Matplotlib}).
     \item \textbf{Numerische Experimente:} Systematische Konvergenzanalyse (Variation von $N = 4, 8, 16, 32, \ldots$), Sensitivitätsanalyse bezüglich des Parameters $L$ sowie Vergleich der Rechenzeiten zwischen COS- und FFT-Methode.
-    \item \textbf{Modellvergleich:} Implementierung und Anwendung der COS-Methode auf das \textbf{Heston-Modell} (Stochastische Volatilität), um den Effizienzvorteil gegenüber der numerischen Integration der charakteristischen Funktion unter realistischen Bedingungen zu validieren.
+    \item \textbf{Modellvergleich:} Anwendung der Methode auf das Black-Scholes-Modell sowie das \textbf{Heston-Modell} (stochastische Volatilität), um die Korrektheit und den Effizienzvorteil in Modellen ohne einfache geschlossene Formeln zu validieren.
 \end{enumerate}
 
 % --- 6. ERWARTETER ERKENNTNISGEWINN ---

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.30)  12 FEB 2026 11:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.30)  12 FEB 2026 12:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -464,28 +464,23 @@ Package hyperref Info: Link coloring OFF on input line 19.
 
  [1
 
-{C:/Users/Deko/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Overfull \hbox (0.60081pt too wide) in paragraph at lines 61--62
-\T1/cmr/m/n/12 Methode wird in Py-thon im-ple-men-tiert und auf eu-ro-päi-sche 
-Op-tio-nen im Black-Scholes-
- []
-
-[1] (disposition.toc)
+{C:/Users/Deko/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [1] (disposit
+ion.toc)
 \tf@toc=\write4
 \openout4 = `disposition.toc'.
 
  [2]
-Overfull \hbox (4.96492pt too wide) in paragraph at lines 76--77
+Overfull \hbox (4.96492pt too wide) in paragraph at lines 75--76
 []\T1/cmr/m/n/12 Klassische An-sät-ze wie Monte-Carlo-Simulationen oder Finite-
 Differenzen-Methoden
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 92.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 91.
 
 (C:\Users\Deko\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 92.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 91.
 
 
 (C:\Users\Deko\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -506,7 +501,7 @@ Here is how much of TeX's memory you used:
  42041 multiletter control sequences out of 15000+600000
  639103 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,5n,79p,813b,531s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,6n,79p,1119b,531s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Deko\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1
 200.pk> <C:\Users\Deko\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\
 tcrm1200.pk> <C:\Users\Deko\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dp
@@ -518,9 +513,9 @@ jfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\Deko\AppData\Local\MiKTeX\fonts
 /pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk><C:/Users/Deko/AppData/Local/Programs
 /MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/Deko/AppData/Local/
 Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-Output written on disposition.pdf (8 pages, 164818 bytes).
+Output written on disposition.pdf (8 pages, 167455 bytes).
 PDF statistics:
- 474 PDF objects out of 1000 (max. 8388607)
+ 481 PDF objects out of 1000 (max. 8388607)
  30 named destinations out of 1000 (max. 500000)
  57 words of extra memory for PDF output out of 10000 (max. 10000000)
 
