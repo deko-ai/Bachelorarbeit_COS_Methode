@@ -71,7 +71,7 @@ Die vorliegende Bachelorarbeit beschreibt und vergleicht zwei solche Transformat
 
 % --- 1. AUSGANGSLAGE UND PROBLEMSTELLUNG ---
 \section{Ausgangslage und Problemstellung}
-Die Bewertung derivativer Finanzinstrumente erfordert in der Praxis leistungsfähige numerische Verfahren. Während das klassische Modell von Black und Scholes \citep{hullOptionsFuturesOther2022} für europäische Standardoptionen eine geschlossene Lösung bietet, erfordern realitätsnähere Modelle, etwa mit stochastischer Volatilität oder Sprungprozessen, oft numerische Näherungsverfahren.
+Die Bewertung derivativer Finanzinstrumente erfordert hocheffiziente numerische Verfahren. Während für das klassische Black-Scholes-Modell \citep{hullOptionsFuturesOther2022} sowie das Merton-Jump-Diffusion-Modell bereits geschlossene bzw. schnell auswertbare analytische Formeln existieren, entfaltet die Fourier-Cosinus (COS) Methode ihre eigentliche Relevanz bei komplexeren Modellen. Insbesondere bei Modellen mit stochastischer Volatilität existieren oft nur semi-analytische Preisformeln, deren direkte numerische Auswertung rechenintensiv ist. Die COS-Methode verspricht hier eine deutliche Beschleunigung bei gleichbleibender Präzision \citep{fangNovelPricingMethod2009}.
 
 Klassische Ansätze wie Monte-Carlo-Simulationen oder Finite-Differenzen-Methoden sind zwar flexibel, aber rechenintensiv. Transformationsmethoden bieten hier eine attraktive Alternative: Kennt man die charakteristische Funktion des zugrunde liegenden Preisprozesses, kann der Optionspreis über eine Fourier-Inversion bestimmt werden. \citet{carrOptionValuationUsing1999} zeigten dies erstmals mit der FFT-Methode. \citet{fangNovelPricingMethod2009} entwickelten mit der COS-Methode einen Ansatz, der eine deutlich höhere Konvergenzgeschwindigkeit verspricht.
 
@@ -92,6 +92,7 @@ Zur Konkretisierung werden folgende Unterfragen untersucht:
     \item Ab welcher Anzahl an Summanden $N$ erreicht die COS-Methode eine hinreichende Genauigkeit im Vergleich zur analytischen Black-Scholes-Lösung?
     \item Wie verhält sich die COS-Methode im Vergleich zur FFT-Methode bei unterschiedlichen Modellen und Parameterkonfigurationen?
     \item Welchen Einfluss hat die Wahl des Abschneideintervalls $L$ auf die numerische Stabilität der Ergebnisse?
+    \item Bietet die COS-Methode bei Modellen mit stochastischer Volatilität einen signifikanten Performance-Vorteil gegenüber der Auswertung herkömmlicher semi-analytischer Preisformeln?
 \end{itemize}
 
 % --- 3. THEORETISCHER RAHMEN ---
@@ -117,7 +118,7 @@ Die Arbeit ist als quantitative Simulationsstudie konzipiert und gliedert sich i
     \item \textbf{Theoretische Grundlegung:} Darstellung der risikoneutralen Bewertung, der charakteristischen Funktionen sowie mathematische Herleitung der FFT- und der COS-Methode auf Basis der Originalliteratur von \citet{fangNovelPricingMethod2009} und \citet{carrOptionValuationUsing1999}.
     \item \textbf{Implementierung in Python:} Entwicklung eines Programms zur Preisberechnung europäischer Optionen mittels der COS-Methode. Die Implementierung erfolgt unter Verwendung von Standard-Bibliotheken (\texttt{NumPy}, \texttt{SciPy}, \texttt{Matplotlib}).
     \item \textbf{Numerische Experimente:} Systematische Konvergenzanalyse (Variation von $N = 4, 8, 16, 32, \ldots$), Sensitivitätsanalyse bezüglich des Parameters $L$ sowie Vergleich der Rechenzeiten zwischen COS- und FFT-Methode.
-    \item \textbf{Modellvergleich:} Anwendung der COS-Methode auf ein alternatives Modell (z.\,B.\ Merton Jump-Diffusion) und Überprüfung der Korrektheit anhand bereitgestellter Referenzalgorithmen.
+    \item \textbf{Modellvergleich:} Implementierung und Anwendung der COS-Methode auf das \textbf{Heston-Modell} (Stochastische Volatilität), um den Effizienzvorteil gegenüber der numerischen Integration der charakteristischen Funktion unter realistischen Bedingungen zu validieren.
 \end{enumerate}
 
 % --- 6. ERWARTETER ERKENNTNISGEWINN ---
